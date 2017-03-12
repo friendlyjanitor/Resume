@@ -1,22 +1,22 @@
-$("#main").append("Ryan Cross");
+//$("#main").append("Ryan Cross");
 
-// var awesomeThoughts = "I am Ryan and I am Awesome";
- //var funThoughts = awesomeThoughts.replace ("Awesome", "fun");
- //console.log (awesomeThoughts);
- //console.log (funThoughts);
+var awesomeThoughts = "I am Ryan and I am Awesome";
+var funThoughts = awesomeThoughts.replace ("Awesome", "fun");
+console.log (awesomeThoughts);
+console.log (funThoughts);
 
  //$("#main").append(funThoughts)
 
-//var fullName = "Ryan Cross";
-//var job = "SQA Analyst";
+var fullName = "Ryan Cross";
+var job = "SQA Analyst";
 
- //var name = HTMLheaderName.replace("%data%",fullName);
+var formattedname = HTMLheaderName.replace("%data%",fullName);
+var formattedjob = HTMLheaderRole.replace("%data%",job);
 
- //$("#header").append(name);
+$("#header").append(formattedname);
+$("#header").append(formattedjob);
 
 
-//var careerTitle = HTMLheaderRole.replace("%data%",job);
-//$("#header").append(careerTitle);
 
 
 var skills = ["Jira", "SQL","Linux","JavaScript","Git"];
