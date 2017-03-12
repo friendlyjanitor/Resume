@@ -27,5 +27,17 @@ var bio = {
 	"contact_info" = "802491690",
 	"welcome message" = "welcome to my resume"
 }
+
+var work = {
+	"employer"="Market Leader",
+	"years" = "3",
+	"Location"= "Bellevue, WA",
+	"Position"="SQA Analyst"
+}
+var education = {
+	"School" = "Plymouth State University",
+	"Degree"="Mathematics",
+	"School_City" = "Plymouth, NH"
+}
 $("#header").append(bio.contact_info);
 console.log(skills.length);
