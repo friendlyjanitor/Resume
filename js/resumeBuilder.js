@@ -23,8 +23,8 @@ var skills = ["Jira", "SQL","Linux","JavaScript","Git"];
 
 
 
-var WorkExpierence = {
-	"Expierence":[
+var Work = {
+	"Job":[
 		{
 			"Company": "Bullhorn",
 			"Duration": "January 2013 - December 2013",
@@ -38,8 +38,6 @@ var WorkExpierence = {
 			"Title": "Software Quality Assurnace Analyst"
 
 		}
-
-
 	]
 }
 
@@ -76,6 +74,20 @@ var bio = {
 };
 	
 
+	if (bio.skills.length > 0) {
+		$("#header").append(HTMLskillsStart);
+	
+
+var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+$("#skills").append(formattedSkill);
+formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+$("#skills").append(formattedSkill);
+formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+$("#skills").append(formattedSkill);
+formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+$("#skills").append(formattedSkill);
+
+}
 
 //var s = "audacity";
 
@@ -93,3 +105,23 @@ var bio = {
 
 // Did your code work? The line below will tell you!
 // console.log(udacityizer(s));
+
+
+
+
+for (Jobs in Work.Job){
+	$("#workExperience").append(HTMLworkStart);
+	var formattedEmployer = HTMLworkEmployer.replace
+	("%data%",Work.Job[Jobs].Company);
+	var formattedTitle = HTMLworkTitle.replace
+	("%data%",Work.Job[Jobs].Title);
+	var formattedDate = HTMLworkDates.replace
+	("%data%",Work.Job[Jobs].Duration);
+	var formattedEmployerTitle = formattedEmployer + formattedTitle ;
+
+	$(".work-entry:last").append(formattedEmployerTitle);
+	$(".work-entry:last").append(formattedDate);
+	
+	
+}
+
