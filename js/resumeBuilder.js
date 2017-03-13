@@ -29,13 +29,15 @@ var Work = {
 			"Company": "Bullhorn",
 			"Duration": "January 2013 - December 2013",
 			"Location": "Boston, MA",
-			"Title": "Technical Support Analyst"
+			"Title": "Technical Support Analyst",
+			"Description": "I worked at Bullhorn"
 		},
 		{
 			"Company": "Market Leader",
 			"Duration": "December 2013 - December 2016",
 			"Location": "Bellevue, WA",
-			"Title": "Software Quality Assurnace Analyst"
+			"Title": "Software Quality Assurnace Analyst",
+			"Description": "I worked at Market Leader!"
 
 		}
 	]
@@ -117,10 +119,12 @@ for (Jobs in Work.Job){
 	("%data%",Work.Job[Jobs].Title);
 	var formattedDate = HTMLworkDates.replace
 	("%data%",Work.Job[Jobs].Duration);
+	var formattedDescription = HTMLworkDescription.replace("%data%",Work.Job[Jobs].Description);
 	var formattedEmployerTitle = formattedEmployer + formattedTitle ;
 
 	$(".work-entry:last").append(formattedEmployerTitle);
 	$(".work-entry:last").append(formattedDate);
+	$(".work-entry:last").append(formattedDescription);
 	
 	
 }
