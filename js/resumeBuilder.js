@@ -7,10 +7,10 @@ console.log (funThoughts);
 
  //$("#main").append(funThoughts)
 
-var fullName = "Ryan Cross";
+var name = "Ryan Cross";
 var job = "SQA Analyst";
 
-var formattedname = HTMLheaderName.replace("%data%",fullName);
+var formattedname = HTMLheaderName.replace("%data%",name);
 var formattedjob = HTMLheaderRole.replace("%data%",job);
 
 $("#header").append(formattedname);
@@ -67,6 +67,13 @@ var Education = {
 	}]
 
 }
+
+
+
+
+
+
+
 
 var bio = {
 	"GivenName" : "Ryan Cross",
@@ -128,6 +135,53 @@ for (Jobs in Work.Job){
 	}
 }
 
+
 displayWork ();
+
+
+
+function inName (name) {
+	name = name.trim().split(" ");
+	console.log(name);
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+	return name[0] + " " + name [1];
+}
+
+
+
+
+var project = {
+			"projects": [
+							{
+								"subject" : "Testing Prjoect 1",
+								"duration": "Spring 2016",
+								"description" : "I didn't really do anything I am just making this up"
+							},
+		 					{
+								"subject" : "Testing Prjoect 2",
+								"duration": "Spring 2012",
+								"description" : "I didn't really do anything I am just making this up, just like I made up the first one"
+							}
+						],
+		    	display: function()
+							{ 
+								for (Project in project.projects)
+								{
+								$("#projects").append(HTMLprojectStart);
+								var formattedSubject = HTMLprojectTitle.replace
+								("%data%",project.projects[Project].subject);
+								$(".project-entry:last").append(formattedSubject);
+								var formattedDuration= HTMLprojectDates.replace
+								("%data%",project.projects[Project].duration);
+								$(".project-entry:last").append(formattedDuration);
+								var formattedDescription = HTMLprojectDescription.replace("%data%",project.projects[Project].description);
+								$(".project-entry:last").append(formattedDescription);
+								}
+							}
+			}
+
+project.display();
+
 
 
