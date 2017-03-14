@@ -107,9 +107,7 @@ $("#skills").append(formattedSkill);
 
 // Did your code work? The line below will tell you!
 // console.log(udacityizer(s));
-
-
-
+function displayWork(){
 
 for (Jobs in Work.Job){
 	$("#workExperience").append(HTMLworkStart);
@@ -127,5 +125,9 @@ for (Jobs in Work.Job){
 	$(".work-entry:last").append(formattedDescription);
 	
 	
+	}
 }
+
+displayWork ();
+
 
