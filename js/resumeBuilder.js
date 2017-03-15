@@ -1,11 +1,60 @@
-//$("#main").append("Ryan Cross");
 
-var awesomeThoughts = "I am Ryan and I am Awesome";
-var funThoughts = awesomeThoughts.replace ("Awesome", "fun");
-console.log (awesomeThoughts);
-console.log (funThoughts);
+var bio = {
+	"name" : "Ryan Cross",
+    "role" : "Software Quality Assurnace Analyst",
+    "contacts" : [{
+          "mobile": "802-249-1690",
+          "email": "cross.w.ryan@gmail.com",
+          "github": "friendlyjanitor",
+          "location": "Boston, MA"
+      			}],
+    "welcomeMessage": "Welcome to my Resume, I enjoy learning new code and seeing what I can create with it" ,
+    "skills": ["Jira", "SQL","Linux","JavaScript","Git"],
+    "biopic": "images/profile.png",
+    display: function (){
+    			bio.contacts.forEach(function(index){
 
- //$("#main").append(funThoughts)
+    						var data = "%data%";
+    						var formattedMobile = HTMLmobile.replace(data, index.mobile);
+							$("#topContacts").append(formattedMobile);
+							var formattedEmail = HTMLemail.replace(data, index.email);
+							$("#topContacts").append(formattedEmail);
+							var formattedGitHub = HTMLgithub.replace(data, index.github);
+							$("#topContacts").append(formattedGitHub);
+							var formattedLocation= HTMLlocation.replace(data, index.location);
+							$("#topContacts").append(formattedLocation);
+							var formattedImage = HTMLbioPic.replace(data, bio.biopic);
+							$("#header").append(formattedImage);
+							
+
+
+
+
+    			});
+
+    		}
+
+}
+
+
+
+
+
+
+bio.display();
+
+
+$("#header").append(HTMLskillsStart);
+
+if (bio.skills.length > 0) {
+		for (var i=0; i < bio.skills.length; i++ ){
+				var data = "%data%";
+				var formattedSkill = HTMLskills.replace(data, bio.skills[i]);
+				$("#skills").append(formattedSkill);
+
+};
+}
+
 
 var name = "Ryan Cross";
 var job = "SQA Analyst";
@@ -19,7 +68,7 @@ $("#header").prepend(formattedname);
 
 
 
-var skills = ["Jira", "SQL","Linux","JavaScript","Git"];
+
 
 
 
@@ -134,47 +183,6 @@ Education.display ();
 
 
 
-
-var bio = {
-	"GivenName" : "Ryan Cross",
-	"role" : "Software Quality Assurnace Analyst",
-	"age" : "27",
-	"skills" :["Jira", "SQL","Linux","JavaScript","Git"],
-	"mobile": "802-249-1690",
-	"email": "cross.w.ryan@gmail.com",
-	"GitHub": "friendlyjanitor",
-	"location": "Boston, MA",
-	"image": "images/profile.png"
-	};
-
-	var formattedMobile = HTMLmobile.replace("%data%", bio.mobile);
-	$("#topContacts").append(formattedMobile);
-	var formattedEmail = HTMLemail.replace("%data%", bio.email);
-	$("#topContacts").append(formattedEmail);
-	var formattedGitHub = HTMLgithub.replace("%data%", bio.GitHub);
-	$("#topContacts").append(formattedGitHub);
-	var formattedLocation= HTMLlocation.replace("%data%", bio.location);
-	$("#topContacts").append(formattedLocation);
-	var formattedImage = HTMLbioPic.replace("%data%", bio.image);
-	$("#header").append(formattedImage);
-
-
-
-
-	if (bio.skills.length > 0) {
-		$("#header").append(HTMLskillsStart);
-	
-
-var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-$("#skills").append(formattedSkill);
-formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-$("#skills").append(formattedSkill);
-formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-$("#skills").append(formattedSkill);
-formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-$("#skills").append(formattedSkill);
-
-}
 
 //var s = "audacity";
 
