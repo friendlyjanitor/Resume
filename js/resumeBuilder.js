@@ -13,9 +13,9 @@ var job = "SQA Analyst";
 var formattedname = HTMLheaderName.replace("%data%",name);
 var formattedjob = HTMLheaderRole.replace("%data%",job);
 
-$("#header").append(formattedname);
-$("#header").append(formattedjob);
 
+$("#header").prepend(formattedjob);
+$("#header").prepend(formattedname);
 
 
 
@@ -79,9 +79,25 @@ var bio = {
 	"GivenName" : "Ryan Cross",
 	"role" : "Software Quality Assurnace Analyst",
 	"age" : "27",
-	"skills" :["Jira", "SQL","Linux","JavaScript","Git"]
-};
+	"skills" :["Jira", "SQL","Linux","JavaScript","Git"],
+	"mobile": "802-249-1690",
+	"email": "cross.w.ryan@gmail.com",
+	"GitHub": "friendlyjanitor",
+	"location": "Boston, MA"
+	};
+
+	var formattedMobile = HTMLmobile.replace("%data%", bio.mobile);
+	$("#topContacts").append(formattedMobile);
+	var formattedEmail = HTMLemail.replace("%data%", bio.email);
+	$("#topContacts").append(formattedEmail);
+	var formattedGitHub = HTMLgithub.replace("%data%", bio.GitHub);
+	$("#topContacts").append(formattedGitHub);
+	var formattedLocation= HTMLlocation.replace("%data%", bio.location);
+	$("#topContacts").append(formattedLocation);
 	
+
+
+
 
 	if (bio.skills.length > 0) {
 		$("#header").append(HTMLskillsStart);
