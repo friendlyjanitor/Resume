@@ -83,7 +83,8 @@ var bio = {
 	"mobile": "802-249-1690",
 	"email": "cross.w.ryan@gmail.com",
 	"GitHub": "friendlyjanitor",
-	"location": "Boston, MA"
+	"location": "Boston, MA",
+	"image": "images/profile.png"
 	};
 
 	var formattedMobile = HTMLmobile.replace("%data%", bio.mobile);
@@ -94,7 +95,8 @@ var bio = {
 	$("#topContacts").append(formattedGitHub);
 	var formattedLocation= HTMLlocation.replace("%data%", bio.location);
 	$("#topContacts").append(formattedLocation);
-	
+	var formattedImage = HTMLbioPic.replace("%data%", bio.image);
+	$("#topContacts").prepend(formattedImage);
 
 
 
