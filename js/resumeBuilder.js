@@ -166,38 +166,42 @@ function inName (name) {
 
 
 
-
 var project = {
 			"projects": [
 							{
-								"subject" : "Testing Prjoect 1",
+								"subject" : "Testing Project 1",
 								"duration": "Spring 2016",
 								"description" : "I didn't really do anything I am just making this up"
 							},
 		 					{
-								"subject" : "Testing Prjoect 2",
+								"subject" : "Testing Project 2",
 								"duration": "Spring 2012",
 								"description" : "I didn't really do anything I am just making this up, just like I made up the first one"
 							}
 						],
-		    	display: function()
-							{ 
-								for (Project in project.projects)
-								{
+		    	display: function(){ 
+								project.projects.forEach(function(project){
+									var data = "%data%";
 								$("#projects").append(HTMLprojectStart);
 								var formattedSubject = HTMLprojectTitle.replace
-								("%data%",project.projects[Project].subject);
+								(data,project.subject);
 								$(".project-entry:last").append(formattedSubject);
 								var formattedDuration= HTMLprojectDates.replace
-								("%data%",project.projects[Project].duration);
+								(data,project.duration);
 								$(".project-entry:last").append(formattedDuration);
-								var formattedDescription = HTMLprojectDescription.replace("%data%",project.projects[Project].description);
+								var formattedDescription = HTMLprojectDescription.replace(data,project.description);
 								$(".project-entry:last").append(formattedDescription);
-								}
+								});
 							}
 			}
 
 project.display();
+
+
+
+
+
+//$("#mapDiv").append(googleMap);
 
 
 
