@@ -40,8 +40,48 @@ var Work = {
 			"Description": "I worked at Market Leader!"
 
 		}
-	]
+	],
+	display : function () {
+
+		Work.Job.forEach(function(job)
+
+								{
+									var data = "%data%" ;
+
+									$("#workExperience").append(HTMLworkStart);
+									var formattedEmployer = HTMLworkEmployer.replace
+									(data,job.Company);
+									var formattedTitle = HTMLworkTitle.replace
+									(data,job.Title);
+									var formattedDate = HTMLworkDates.replace
+									(data,job.Duration);
+									var formattedDescription = HTMLworkDescription.replace(data,job.Description);
+									var formattedEmployerTitle = formattedEmployer + formattedTitle ;
+
+									$(".work-entry:last").append(formattedEmployerTitle);
+									$(".work-entry:last").append(formattedDate);
+									$(".work-entry:last").append(formattedDescription);
+	
+
+
+
+
+
+
+
+
+								});
+
+	
+
+							}
+
+
+
+
 }
+Work.display();
+
 
 var Education = {
 	"School": [{
@@ -56,17 +96,37 @@ var Education = {
 		"Name": "JavaScript Basic",
 		"School": "Udacity",
 		"Duration": "Spring 2017"
-	}, {
+	}, 
+
+	{
 		"Name": "Introduction to Programming",
 		"School": "University of Phoneix",
 		"Duration": "winter 2013"
-	}, {
+	}, 
+
+	{
 		"Name": "Intro to C++",
 		"School": "University of Phoneix",
 		"Duration": "winter 2013"
-	}]
+	}],
 
+
+
+		display : function () {
+			Education.School.forEach(function(school){
+			var data = "%data%";
+			$("#education").append(HTMLschoolStart);
+									var formattedName = HTMLschoolName.replace (data,school.Name);
+									$(".education-entry").append(formattedName);});
+		}
 }
+
+Education.display ();
+
+
+
+
+
 
 
 
@@ -96,7 +156,7 @@ var bio = {
 	var formattedLocation= HTMLlocation.replace("%data%", bio.location);
 	$("#topContacts").append(formattedLocation);
 	var formattedImage = HTMLbioPic.replace("%data%", bio.image);
-	$("#topContacts").prepend(formattedImage);
+	$("#header").append(formattedImage);
 
 
 
@@ -132,29 +192,17 @@ $("#skills").append(formattedSkill);
 
 // Did your code work? The line below will tell you!
 // console.log(udacityizer(s));
-function displayWork(){
-
-for (Jobs in Work.Job){
-	$("#workExperience").append(HTMLworkStart);
-	var formattedEmployer = HTMLworkEmployer.replace
-	("%data%",Work.Job[Jobs].Company);
-	var formattedTitle = HTMLworkTitle.replace
-	("%data%",Work.Job[Jobs].Title);
-	var formattedDate = HTMLworkDates.replace
-	("%data%",Work.Job[Jobs].Duration);
-	var formattedDescription = HTMLworkDescription.replace("%data%",Work.Job[Jobs].Description);
-	var formattedEmployerTitle = formattedEmployer + formattedTitle ;
-
-	$(".work-entry:last").append(formattedEmployerTitle);
-	$(".work-entry:last").append(formattedDate);
-	$(".work-entry:last").append(formattedDescription);
-	
-	
-	}
-}
 
 
-displayWork ();
+
+// starting display here with for each
+
+
+
+
+// end it here
+
+
 
 
 
