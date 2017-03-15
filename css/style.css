@@ -28,7 +28,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #0038A8 ;
   line-height: 48px;
   display: inline;
 }
@@ -115,9 +115,9 @@ a {
   color: #f5ae23;
 }
 
-.white-text {
+.navy-text {
   font-weight: bold;
-  color: #fff;
+  color: #0038A8 ;
 }
 
 .gray {
@@ -132,7 +132,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #fff;
 }
 
 .flex-box {

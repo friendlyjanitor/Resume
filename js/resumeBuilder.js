@@ -25,7 +25,12 @@ var bio = {
 							$("#topContacts").append(formattedLocation);
 							var formattedImage = HTMLbioPic.replace(data, bio.biopic);
 							$("#header").append(formattedImage);
-							
+							var formattedname = HTMLheaderName.replace(data, bio.name);
+							var formattedjob = HTMLheaderRole.replace(data,bio.role);
+							var formattedMsg = HTMLwelcomeMsg.replace(data,bio.welcomeMessage);
+							$("#header").append(formattedMsg);
+							$("#header").prepend(formattedjob);
+							$("#header").prepend(formattedname);
 
 
 
@@ -36,13 +41,7 @@ var bio = {
 
 }
 
-
-
-
-
-
 bio.display();
-
 
 $("#header").append(HTMLskillsStart);
 
@@ -56,15 +55,7 @@ if (bio.skills.length > 0) {
 }
 
 
-var name = "Ryan Cross";
-var job = "SQA Analyst";
 
-var formattedname = HTMLheaderName.replace("%data%",name);
-var formattedjob = HTMLheaderRole.replace("%data%",job);
-
-
-$("#header").prepend(formattedjob);
-$("#header").prepend(formattedname);
 
 
 
@@ -136,8 +127,9 @@ var Education = {
 	"School": [{
 		"Name": "Plymouth State University",
 		"Location": "Plymouth, NH",
-		"Degree": "B.S. Mathematics",
-		"Year": "2012"
+		"Degree": "B.S.",
+		"Major": "Mathematics",
+		"Year": "2008 - 2012"
 	}],
 
 	"Courses": [{
@@ -166,11 +158,60 @@ var Education = {
 			var data = "%data%";
 			$("#education").append(HTMLschoolStart);
 									var formattedName = HTMLschoolName.replace (data,school.Name);
-									$(".education-entry").append(formattedName);});
+									var formattedLocation = HTMLschoolLocation.replace (data,school.Location);
+									var formattedDegree = HTMLschoolDegree.replace (data,school.Degree);
+									var formattedDate = HTMLschoolDates.replace (data, school.Year);
+									var formattedMajor = HTMLschoolMajor.replace (data, school.Major);
+									var formattedSchool = formattedName + formattedDegree + formattedLocation + formattedDate + formattedMajor;
+									$(".education-entry:last").append(formattedSchool);
+									
+
+
+
+
+									});
+
+
+
+
+
+		
 		}
 }
 
 Education.display ();
+
+
+var project = {
+			"projects": [
+							{
+								"subject" : "Testing Project 1",
+								"duration": "Spring 2016",
+								"description" : "I didn't really do anything I am just making this up"
+							},
+		 					{
+								"subject" : "Testing Project 2",
+								"duration": "Spring 2012",
+								"description" : "I didn't really do anything I am just making this up, just like I made up the first one"
+							}
+						],
+		    	display: function(){ 
+								project.projects.forEach(function(project){
+									var data = "%data%";
+								$("#projects").append(HTMLprojectStart);
+								var formattedSubject = HTMLprojectTitle.replace
+								(data,project.subject);
+								$(".project-entry:last").append(formattedSubject);
+								var formattedDuration= HTMLprojectDates.replace
+								(data,project.duration);
+								$(".project-entry:last").append(formattedDuration);
+								var formattedDescription = HTMLprojectDescription.replace(data,project.description);
+								$(".project-entry:last").append(formattedDescription);
+								});
+							}
+			}
+
+project.display();
 
 
 
@@ -214,6 +255,14 @@ Education.display ();
 
 
 
+
+
+
+
+
+
+
+
 function inName (name) {
 	name = name.trim().split(" ");
 	console.log(name);
@@ -221,41 +270,6 @@ function inName (name) {
 	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
 	return name[0] + " " + name [1];
 }
-
-
-
-var project = {
-			"projects": [
-							{
-								"subject" : "Testing Project 1",
-								"duration": "Spring 2016",
-								"description" : "I didn't really do anything I am just making this up"
-							},
-		 					{
-								"subject" : "Testing Project 2",
-								"duration": "Spring 2012",
-								"description" : "I didn't really do anything I am just making this up, just like I made up the first one"
-							}
-						],
-		    	display: function(){ 
-								project.projects.forEach(function(project){
-									var data = "%data%";
-								$("#projects").append(HTMLprojectStart);
-								var formattedSubject = HTMLprojectTitle.replace
-								(data,project.subject);
-								$(".project-entry:last").append(formattedSubject);
-								var formattedDuration= HTMLprojectDates.replace
-								(data,project.duration);
-								$(".project-entry:last").append(formattedDuration);
-								var formattedDescription = HTMLprojectDescription.replace(data,project.description);
-								$(".project-entry:last").append(formattedDescription);
-								});
-							}
-			}
-
-project.display();
-
-
 
 
 
